@@ -1,0 +1,24 @@
+<table class=" mt-2 table table-dark">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Price</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of listEmployees" >
+        <th scope="row">{{item.id}}</th>
+        <td>{{item.name}}</td>
+        <td>{{item.telephone}}</td>
+        <td>{{item.price}}</td>
+        <td>{{item.quantity}}</td>
+        <td scope="col"><div class="btn btn btn-secondary me-3" [routerLink]="['/employee/edit',item.id]"> modify</div>
+          <div class="btn btn btn-danger"  (click)="delete(item.id)"> delete</div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
